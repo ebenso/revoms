@@ -1,0 +1,75 @@
+<div fxFlex>
+  <mat-sidenav-container fxFill>
+    <mat-sidenav
+      #sidenav
+      [mode]="isMobile ? 'over' : 'side'"
+      [opened]="!isMobile"
+      [disableClose]="!isMobile"
+      ngClass.gt-sm="has-border"
+    >
+      <mat-toolbar color="primary">
+        <span translate>APP_NAME</span>
+        <div fxFlex></div>
+      </mat-toolbar>
+      <nav>
+        <mat-list>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <mat-icon mat-list-icon>home</mat-icon>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <mat-icon mat-list-icon>explore</mat-icon>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <mat-icon mat-list-icon>person</mat-icon>
+          </a>
+          <div class=>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <mat-icon mat-list-icon>build</mat-icon>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <mat-icon mat-list-icon>logout</mat-icon>
+          </a>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="mat-elevation-z6">
+        <button class="menu-button" mat-icon-button (click)="sidenav.toggle()" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>{{ title }}</span>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<!--
+ <mat-drawer-container fullscreen class="mat-drawer-container">
+  <mat-drawer #drawer mode="side" disableClose="true" opened="true">
+    <button mat-mini-fab (click)="isExpanded = !isExpanded" color="warn" style="margin: 10px;">
+      <mat-icon aria-label="Menu">menu</mat-icon>
+    </button>
+
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon>home</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon>/Users/oyo/dev/revoms/src/assets/pr_icon.png</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>assignee</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>repository</mat-icon>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+</mat-drawer-container> -->
